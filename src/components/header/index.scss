@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "helvetica-compressed";
+  src: url("../../assets/fonts/helvetica-compressed.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "helvetica-light";
+  src: url("../../assets/fonts/helvetica-light.ttf") format("truetype");
+}
+
+.comp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 138px;
+  padding: 10px 35px;
+  background-color: #293241;
+  color: #ffffff;
+
+  .title-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .tittle {
+      font-family: "helvetica-compressed", sans-serif;
+      font-size: 64px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .sub-tittle {
+      font-family: "helvetica-light", sans-serif;
+      font-size: 20px;
+      font-weight: lighter;
+      padding-left: 20px;
+      margin: 0;
+    }
+  }
+
+  .login {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+
+    .login-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      font-family: "helvetica-light", sans-serif;
+      font-size: 30px;
+      font-weight: normal;
+
+      .user-icon {
+        margin-left: 15px;
+      }
+    }
+  }
+}
