@@ -1,0 +1,34 @@
+nav {
+  width: 211px;
+  height: 886px;
+  flex-shrink: 0;
+
+  background: #03318c;
+
+  Link {
+    text-decoration: none;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .menu-item {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+
+  .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .menu-item.ativo {
+    font-weight: bold;
+    color: #007bff;
+    background-color: white;
+  }
+}
