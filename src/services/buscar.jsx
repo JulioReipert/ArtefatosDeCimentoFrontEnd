@@ -8,3 +8,30 @@ export async function BuscarClientes() {
     console.error("Erro ao buscar clientes:", err);
   }
 }
+
+export async function BuscarPedido() {
+  try {
+    const resp = await axios.get("http://localhost:5010/pedido");
+    return resp.data;
+  } catch (err) {
+    console.error("Erro ao buscar pedidos:", err);
+  }
+}
+
+export async function BuscarMateriaPrima() {
+  try {
+    const resp = await axios.get("http://localhost:5010/materia_prima");
+    return resp.data;
+  } catch (err) {
+    console.error("Erro ao buscar por materia prima:", err);
+  }
+}
+
+export async function BuscarProduto() {
+  try {
+    const resp = await axios.get("http://localhost:5010/produto");
+    return resp.data;
+  } catch (err) {
+    console.error("Erro ao buscar produtos:", err);
+  }
+}
