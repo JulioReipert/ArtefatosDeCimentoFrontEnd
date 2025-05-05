@@ -1,0 +1,23 @@
+.comp-lista-clientes {
+  .item-lista {
+    width: 1017px;
+    height: 50px;
+    border-radius: 6px;
+    background: #f0f0f0;
+    margin-bottom: 20px;
+    padding: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    list-style: none;
+  }
+
+  .item-lista:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .checkbox-cliente {
+    margin-right: 15px;
+    transform: scale(1.2);
+  }
+}
