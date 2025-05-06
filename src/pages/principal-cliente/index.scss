@@ -31,7 +31,7 @@
         .titulo {
           color: #293241;
           font-family: helvetica, sans-serif;
-          font-size: 24px;
+          font-size: 35px;
           font-style: normal;
           font-weight: 400;
           line-height: normal;
@@ -44,6 +44,46 @@
       .lista-cliente {
         margin-top: 50px;
         margin-left: 80px;
+
+        .info-item-lista {
+          padding-left: 45px;
+          margin-bottom: 20px;
+          display: grid;
+          grid-auto-flow: column;
+          column-gap: 1rem;
+          align-items: center;
+
+          grid-template-columns:
+            5%
+            10%
+            10%
+            13%
+            13%
+            20%
+            auto;
+        }
+        .item-lista {
+          width: 1250px;
+          height: 50px;
+          border-radius: 6px;
+          background: #f0f0f0;
+          margin-bottom: 20px;
+          padding: 12px;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+          list-style: none;
+        }
+
+        .item-lista:hover {
+          transform: scale(1.001);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          background-color: #929292;
+        }
+
+        .checkbox-cliente {
+          margin-right: 15px;
+          transform: scale(1.2);
+        }
       }
     }
   }

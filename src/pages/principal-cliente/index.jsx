@@ -2,42 +2,29 @@ import "./index.scss";
 import Header from "../../components/header";
 import Sidebar from "../../components/sidebar";
 import Ferramentas from "../../components/ferramentas";
+import BtnCriarCliente from "../../components/btn_criar/index.jsx";
+import { useState, useEffect } from "react";
 import { BuscarClientes } from "../../services/buscar.jsx";
-import { ListarClientes } from "../../components/listarClientes";
 import { ExcluirCliente } from "../../services/deletar.jsx";
-import BtnCriar from "../../components/btn_criar/index.jsx";
-import { useEffect, useState } from "react";
 
 export default function PrincipalCliente() {
-  const [clientes, setClientes] = useState([]);
-  const [selecionados, setSelecionados] = useState([]);
+  const [cliente, setCliente] = useState([]);
+  const [selecionadoId, setSelecionadoId] = useState(null);
 
-  async function atualizarClientes() {
-    try {
-      const dados = await BuscarClientes();
-      setClientes(dados);
-      setSelecionados([]);
-    } catch (err) {
-      console.log("Erro ao carregar clientes.");
-    }
+  async function fetchClientes() {
+    const dados = await BuscarClientes();
+    setCliente(dados);
   }
 
-  const excluirSelecionados = async () => {
-    try {
-      await Promise.all(
-        selecionados.map((id) => ExcluirCliente(id, "cliente"))
-      );
-      alert("Clientes excluídos com sucesso!");
-      await atualizarClientes();
-    } catch (err) {
-      console.error("Erro ao excluir clientes:", err);
-      alert("Erro ao excluir clientes.");
-    }
-  };
-
   useEffect(() => {
-    atualizarClientes();
+    fetchClientes();
   }, []);
+
+  async function deletarCliente() {
+    if (selecionadoId == null) return;
+    await ExcluirCliente(selecionadoId);
+    fetchClientes();
+  }
 
   return (
     <div className="pagina-principal">
@@ -48,13 +35,35 @@ export default function PrincipalCliente() {
           <div className="lista-cliente-topo">
             <h1 className="titulo">Todos os Clientes</h1>
             <div className="ferramentas">
-              <Ferramentas aoClicarExcluir={excluirSelecionados} />
+              <Ferramentas Excluir={deletarCliente} />
             </div>
           </div>
 
           <div className="lista-cliente">
-            <ListarClientes clientes={clientes} />
-            <BtnCriar atualizarClientes={atualizarClientes} />
+            <div className="info-item-lista">
+              <label>ID</label>
+              <label>nome</label>
+              <label>email</label>
+              <label>telefone</label>
+              <label>celular</label>
+              <label>tipo documento</label>
+              <label>num. documento</label>
+            </div>
+            {cliente.map((cliente) => (
+              <li key={cliente.id} className="item-lista">
+                <input
+                  type="checkbox"
+                  className="checkbox-cliente"
+                  checked={selecionadoId === cliente.id}
+                  onChange={() => setSelecionadoId(cliente.id)}
+                />
+                {cliente.id} - {cliente.nome} - {cliente.email} -{" "}
+                {cliente.telefone} - {cliente.celular} -{" "}
+                {cliente.tipo_documento} - {cliente.numero_documento}
+              </li>
+            ))}
+
+            <BtnCriarCliente fetchClientes={fetchClientes} />
           </div>
         </div>
       </main>

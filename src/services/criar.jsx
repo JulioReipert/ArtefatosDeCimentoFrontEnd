@@ -7,19 +7,19 @@ export function CriarCliente(nome, email, telefone, celular, tipoDoc, numDoc) {
     telefone: telefone,
     celular: celular,
     tipo_documento: tipoDoc,
-    numero_documento: numDoc
+    numero_documento: numDoc,
   };
 
-  axios.post("http://localhost:5010/cliente", body);
+  return axios.post("http://localhost:5010/cliente", body);
 }
 
 export function CriarMaterial(nome, quantidade) {
   let body = {
     nome: nome,
-    quantidade: quantidade
+    quantidade: quantidade,
   };
 
-  axios.post("http://localhost:5010/materia_prima", body);
+  return axios.post("http://localhost:5010/materia_prima", body);
 }
 
 export function CriarPedido(data_entrega, cliente, endereco, emissao) {
@@ -27,13 +27,23 @@ export function CriarPedido(data_entrega, cliente, endereco, emissao) {
     data_entrega: data_entrega,
     cliente: cliente,
     endereco: endereco,
-    emissao: emissao
+    emissao: emissao,
   };
 
-  axios.post("http://localhost:5010/pedido", body);
+  return axios.post("http://localhost:5010/pedido", body);
 }
 
-export function CriarProduto(nome, quantidade, comprimento, altura, largura, cor, peso, valor, materia_prima) {
+export function CriarProduto(
+  nome,
+  quantidade,
+  comprimento,
+  altura,
+  largura,
+  cor,
+  peso,
+  valor,
+  materia_prima
+) {
   let body = {
     nome: nome,
     quantidade: quantidade,
@@ -43,18 +53,18 @@ export function CriarProduto(nome, quantidade, comprimento, altura, largura, cor
     cor: cor,
     peso: peso,
     valor: valor,
-    materia_prima: materia_prima
+    materia_prima: materia_prima,
   };
 
-  axios.post("http://localhost:5010/produto", body);
+  return axios.post("http://localhost:5010/produto", body);
 }
 
 export function CriarItemPedido(qtd, pedido, item) {
   let body = {
     qtd: qtd,
     pedido: pedido,
-    item: item
+    item: item,
   };
 
-  axios.post("http://localhost:5010/item_pedido", body);
+  return axios.post("http://localhost:5010/item_pedido", body);
 }

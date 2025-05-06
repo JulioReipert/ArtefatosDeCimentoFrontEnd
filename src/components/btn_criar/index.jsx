@@ -3,7 +3,7 @@ import { ReactComponent as CriarImg } from "../../assets/images/criar_img.svg";
 import { useState } from "react";
 import { CriarCliente } from "../../services/criar.jsx";
 
-export default function BtnCriar({ atualizarClientes }) {
+export default function BtnCriarCliente({ fetchClientes }) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
@@ -23,8 +23,7 @@ export default function BtnCriar({ atualizarClientes }) {
     e.preventDefault();
     await CriarCliente(nome, email, telefone, celular, tipoDoc, numDoc);
     limpar();
-
-    await atualizarClientes();
+    fetchClientes();
   }
 
   function limpar() {
