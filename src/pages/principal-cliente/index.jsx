@@ -11,8 +11,7 @@ import { EditarCliente } from "../../services/editar.jsx";
 export default function PrincipalCliente() {
   const [cliente, setCliente] = useState([]);
   const [selecionadoId, setSelecionadoId] = useState(null);
-
-  const [editandoId, setEditandoId] = useState(null);
+  const [dadosEdicao, setDadosEdicao] = useState(null);
 
   async function fetchClientes() {
     const dados = await BuscarClientes();
@@ -26,17 +25,33 @@ export default function PrincipalCliente() {
   async function deletarCliente() {
     if (selecionadoId == null) return;
     await ExcluirCliente(selecionadoId);
+    setSelecionadoId(null);
     fetchClientes();
   }
 
-  async function editarCliente() {
-    if (selecionadoId == null) return;
-    await EditarCliente(selecionadoId);
+  async function salvarEdicao() {
+    if (!dadosEdicao) return;
+    await EditarCliente(
+      selecionadoId,
+      dadosEdicao.nome,
+      dadosEdicao.email,
+      dadosEdicao.telefone,
+      dadosEdicao.celular,
+      dadosEdicao.tipo_documento,
+      dadosEdicao.numero_documento
+    );
+    setSelecionadoId(null);
+    setDadosEdicao(null);
     fetchClientes();
+  }
+
+  function iniciarEdicao(cliente) {
+    setSelecionadoId(cliente.id);
+    setDadosEdicao({ ...cliente });
   }
 
   function atualizarCampo(nome, valor) {
-    setCliente[selecionadoId]((prev) => ({ ...prev, [nome]: valor }));
+    setDadosEdicao((prev) => ({ ...prev, [nome]: valor }));
   }
 
   return (
@@ -48,7 +63,7 @@ export default function PrincipalCliente() {
           <div className="lista-cliente-topo">
             <h1 className="titulo">Todos os Clientes</h1>
             <div className="ferramentas">
-              <Ferramentas Editar={editarCliente} Excluir={deletarCliente} />
+              <Ferramentas Editar={salvarEdicao} Excluir={deletarCliente} />
             </div>
           </div>
 
@@ -68,33 +83,37 @@ export default function PrincipalCliente() {
                   type="checkbox"
                   className="checkbox-cliente"
                   checked={selecionadoId === cliente.id}
-                  onChange={() => setSelecionadoId(cliente.id)}
+                  onChange={() =>
+                    selecionadoId === cliente.id
+                      ? setSelecionadoId(null)
+                      : iniciarEdicao(cliente)
+                  }
                 />
 
                 {selecionadoId === cliente.id ? (
                   <>
                     <input
-                      value={cliente.nome}
+                      value={dadosEdicao.nome}
                       onChange={(e) => atualizarCampo("nome", e.target.value)}
                     />
                     <input
-                      value={cliente.email}
+                      value={dadosEdicao.email}
                       onChange={(e) => atualizarCampo("email", e.target.value)}
                     />
                     <input
-                      value={cliente.telefone}
+                      value={dadosEdicao.telefone}
                       onChange={(e) =>
                         atualizarCampo("telefone", e.target.value)
                       }
                     />
                     <input
-                      value={cliente.celular}
+                      value={dadosEdicao.celular}
                       onChange={(e) =>
                         atualizarCampo("celular", e.target.value)
                       }
                     />
                     <select
-                      value={cliente.tipo_documento}
+                      value={dadosEdicao.tipo_documento}
                       onChange={(e) =>
                         atualizarCampo("tipo_documento", e.target.value)
                       }
@@ -103,7 +122,7 @@ export default function PrincipalCliente() {
                       <option value="CNPJ">CNPJ</option>
                     </select>
                     <input
-                      value={cliente.numero_documento}
+                      value={dadosEdicao.numero_documento}
                       onChange={(e) =>
                         atualizarCampo("numero_documento", e.target.value)
                       }
