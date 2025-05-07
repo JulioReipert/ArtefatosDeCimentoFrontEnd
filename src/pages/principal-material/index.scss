@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "helvetica";
+  src: url("../../assets/fonts/Helvetica.ttf") format("truetype");
+}
+
+.pagina-principal-material {
+  height: 886px;
+  background: #d9f0ff url("/assets/images/fundo.png") repeat;
+  background-size: 100px 100px;
+  background-blend-mode: normal, plus-lighter;
+
+  main {
+    display: flex;
+    flex-direction: row;
+    width: 1660px;
+    height: 886px;
+    flex-shrink: 0;
+
+    background: #fff;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    margin-left: 100px;
+    margin-top: 138px;
+
+    .main-02 {
+      .lista-material-topo {
+        display: flex;
+        flex-direction: row;
+        margin-top: 80px;
+        margin-left: 80px;
+        .titulo {
+          color: #293241;
+          font-family: helvetica, sans-serif;
+          font-size: 35px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+        .ferramentas {
+          margin-left: 950px;
+        }
+      }
+
+      .lista-material {
+        margin-top: 50px;
+        margin-left: 80px;
+
+        .info-item-lista-material {
+          padding-left: 45px;
+          margin-bottom: 20px;
+          display: grid;
+          grid-auto-flow: column;
+          column-gap: 1rem;
+          align-items: center;
+
+          grid-template-columns:
+            5%
+            10%
+            10%
+            13%
+            13%
+            20%
+            auto;
+        }
+        .item-lista-material {
+          width: 1250px;
+          height: 50px;
+          border-radius: 6px;
+          background: #f0f0f0;
+          margin-bottom: 20px;
+          padding: 12px;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+          list-style: none;
+        }
+
+        .item-lista-material:hover {
+          transform: scale(1.001);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          background-color: #929292;
+        }
+
+        .checkbox-material {
+          margin-right: 15px;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}

@@ -18,7 +18,7 @@ export async function BuscarPedido() {
   }
 }
 
-export async function BuscarMateriaPrima() {
+export async function BuscarMateria() {
   try {
     const resp = await axios.get("http://localhost:5010/materia_prima");
     return resp.data;

@@ -20,3 +20,12 @@ export function EditarCliente(
 
   return axios.put(`http://localhost:5010/cliente/${id}`, body);
 }
+
+export function EditarMateria(id, nome, quantidade) {
+  let body = {
+    nome: nome,
+    quantidade: quantidade,
+  };
+
+  return axios.put(`http://localhost:5010/materia_prima/${id}`, body);
+}
