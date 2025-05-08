@@ -10,11 +10,12 @@
 
 .comp-sobreNos {
   height: 617px;
-  background: url("../../assets/images/fundo_sobreNos.jpg") lightgray 50% /
-    cover no-repeat;
+  background: white;
+  // url("../../assets/images/fundo_sobreNos.jpg") lightgray 50% /
+  //   cover no-repeat;
    
   .sobre-nos {
-    width: 1440px;
+    width: 1000px;
     height: 617px;
     flex-shrink: 0;
 
@@ -23,7 +24,7 @@
 
     border-radius: 100px;
     background: rgba(192, 192, 192, 0.01);
-    backdrop-filter: blur(2px);
+    // backdrop-filter: blur(2px);
     .titulo {
       color: #293241;
       -webkit-text-stroke-width: 1px;
