@@ -1,5 +1,5 @@
 import "./index.scss";
-import { ReactComponent as UserIcon } from "../../assets/images/User.svg";
+
 import { ReactComponent as SetaRetorno } from "../../assets/images/seta_retorno_branca.svg";
 import { Link, useLocation } from "react-router-dom";
 
@@ -17,12 +17,11 @@ export default function Header() {
 
       <div className="login">
         {mostrarLogin ? (
-          <Link to="/login" className="login-link">
-            <span>Login</span>
-            <div className="user-icon">
-              <UserIcon />
-            </div>
-          </Link>
+        <div>
+          <p>(11) 97241-6598</p>
+          <p>busquetcon1@gmail.com</p>
+          <p>Rua Pedrinho Roschel, 80 A - Vila Roschel, São Paulo, SP</p>
+        </div>
         ) : (
           <Link to="/" className="seta-volta">
             <SetaRetorno />

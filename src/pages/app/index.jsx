@@ -60,7 +60,10 @@ export default function App() {
       />
       <SobreNos />
 
-      <div className="fale-conosco">(11) 97241-6598</div>
+      <div className="fale-conosco">
+        <p className="fale-conosco-titulo">Fale Conosco</p>
+        <p className="telefone">(11) 97241-6598</p>
+        </div>
       <Bottom />
     </div>
   );

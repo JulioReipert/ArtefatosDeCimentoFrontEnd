@@ -1,5 +1,5 @@
 import "./index.scss";
-import imagemPia from "../../assets/images/pia_sobreNos.png";
+import imgSobreNos from "../../assets/images/img-sobre-nos.png";
 
 export default function SobreNos() {
   return (
@@ -15,8 +15,12 @@ export default function SobreNos() {
           oferecer produtos duráveis e personalizados, unindo funcionalidade e
           estética para atender às necessidades de cada cliente.
         </h2>
-
-        <img className="pia-sobreNos" src={imagemPia} alt="imagem da pia" />
+      </div>
+      <div className="img-sobreNos">
+        <img
+          src={imgSobreNos}
+          alt="imagem sobre nós"
+        />
       </div>
     </div>
   );

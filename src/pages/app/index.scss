@@ -1,10 +1,9 @@
 .page-app {
   display: flex;
   flex-direction: column;
-  height: 4300px;
 
   background-image: url("/assets/images/fundo.png");
-  background-color: #d9f0ff;
+  background-color: #ffffff;
   background-repeat: repeat;
   background-size: 100px 100px;
   background-blend-mode: normal, plus-lighter;
@@ -15,6 +14,7 @@
   }
 
   .fale-conosco {
+    color: white;
     display: flex;
     width: auto;
     padding: 76px 0px 57px 0px;
@@ -24,8 +24,15 @@
 
     margin-bottom: 100px;
     margin-top: 50px;
-
-    background: rgba(3, 49, 140, 0.95);
     background-blend-mode: plus-darker;
+
+    background: rgba(3, 49, 140, 0.863);
+
+    .fale-conosco-titulo {
+      font-size: 24px;
+    }
+    .telefone {
+      font-size: 48px;
+    }
   }
 }
