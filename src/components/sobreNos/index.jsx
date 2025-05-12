@@ -17,10 +17,7 @@ export default function SobreNos() {
         </h2>
       </div>
       <div className="img-sobreNos">
-        <img
-          src={imgSobreNos}
-          alt="imagem sobre nós"
-        />
+        <img src={imgSobreNos} alt="imagem sobre nós" />
       </div>
     </div>
   );

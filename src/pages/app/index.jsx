@@ -4,6 +4,7 @@ import SobreNos from "../../components/sobreNos";
 import Carrossel from "../../components/carrossel";
 import Produto from "../../components/produtos";
 
+import { ReactComponent as Banner } from "../../assets/images/Banner-Artefatos-de-Cimento.svg";
 import imgCobogo from "../../assets/images/cobogo_4pontas.png";
 import imgCaixa from "../../assets/images/caixa_esgoto.png";
 import imgPia from "../../assets/images/pia_cimento.png";
@@ -15,6 +16,11 @@ export default function App() {
   return (
     <div className="page-app">
       <Header />
+
+      <div className="banner-container">
+        <Banner className="banner" />
+      </div>
+
       <div className="carrossel">
         <Carrossel titulo="Cobogó" imagem={imgCobogo} />
         <Carrossel titulo="Caixa de Esgoto" imagem={imgCaixa} />
@@ -63,7 +69,7 @@ export default function App() {
       <div className="fale-conosco">
         <p className="fale-conosco-titulo">Fale Conosco</p>
         <p className="telefone">(11) 97241-6598</p>
-        </div>
+      </div>
       <Bottom />
     </div>
   );

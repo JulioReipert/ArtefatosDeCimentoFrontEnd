@@ -7,11 +7,8 @@
   display: flex;
   padding: 63px 1147px 22px 20px;
   flex-direction: row;
-  gap: 230%;
+  gap: 1200px;
 
-
-
-  border-radius: 4px;
   background: #293241;
 
   .telefone {
@@ -43,7 +40,6 @@
 
     color: #fff;
     .login-link {
-      
       display: flex;
       text-decoration: none;
       color: inherit;
@@ -51,11 +47,10 @@
       font-size: 30px;
       font-weight: normal;
       align-items: center;
-     
 
       .user-icon {
         margin-left: 15px;
-            }
+      }
     }
   }
 }
