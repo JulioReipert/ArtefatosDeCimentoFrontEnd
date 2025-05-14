@@ -2,6 +2,7 @@ import "./index.scss";
 import { ReactComponent as CriarImg } from "../../assets/images/criar_img.svg";
 import { useState } from "react";
 import { CriarProduto } from "../../services/criar";
+import { BuscarMateria } from "../../services/buscar";
 
 export default function BtnCriarProduto({ fetchProdutos }) {
   const [nome, setNome] = useState("");
@@ -16,8 +17,10 @@ export default function BtnCriarProduto({ fetchProdutos }) {
 
   const [mostrarCadastro, setMosTrarCadastro] = useState(false);
   const [girado, setGirado] = useState(false);
+  const [materia, setMateria] = useState([]);
 
   const toggleCadastro = () => {
+    fetchMateriais();
     setMosTrarCadastro((prev) => !prev);
     setGirado((prev) => !prev);
   };
@@ -49,6 +52,11 @@ export default function BtnCriarProduto({ fetchProdutos }) {
     setPeso("");
     setValor("");
     setMateriaPrima("");
+  }
+
+  async function fetchMateriais() {
+    const dados = await BuscarMateria();
+    setMateria(dados);
   }
 
   return (
@@ -126,12 +134,16 @@ export default function BtnCriarProduto({ fetchProdutos }) {
               onChange={(e) => setValor(e.target.value)}
             />
             <label>Material:</label>
-            <input
-              type="text"
-              className="input"
+            <select
               value={materiaPrima}
               onChange={(e) => setMateriaPrima(e.target.value)}
-            />
+            >
+              {materia.map((materia) => (
+                <option key={materia.id} value={materia.id}>
+                  {materia.nome}
+                </option>
+              ))}
+            </select>
 
             <button className="btn-cadastrar" type="submit">
               Cadastrar

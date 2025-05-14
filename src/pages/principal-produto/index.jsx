@@ -3,13 +3,14 @@ import Header from "../../components/header";
 import Sidebar from "../../components/sidebar";
 import Ferramentas from "../../components/ferramentas";
 import { useState, useEffect } from "react";
-import { BuscarProduto } from "../../services/buscar";
+import { BuscarMateria, BuscarProduto } from "../../services/buscar";
 import { ExcluirProduto } from "../../services/deletar";
 import { EditarProduto } from "../../services/editar";
 import BtnCriarProduto from "../../components/btn_criar_produto";
 
 export default function PrincipalProduto() {
   const [produto, setProduto] = useState([]);
+  const [materia, setMateria] = useState([]);
   const [selecionadoId, setSelecionadoId] = useState(null);
   const [dadosEdicao, setDadosEdicao] = useState(null);
 
@@ -18,8 +19,14 @@ export default function PrincipalProduto() {
     setProduto(dados);
   }
 
+  async function fetchMateriais() {
+    const dados = await BuscarMateria();
+    setMateria(dados);
+  }
+
   useEffect(() => {
     fetchProdutos();
+    fetchMateriais();
   }, []);
 
   async function deletarProduto() {
@@ -99,49 +106,63 @@ export default function PrincipalProduto() {
                 {selecionadoId === produto.id ? (
                   <>
                     <input
+                      className="input-edit-produto"
                       value={dadosEdicao.nome}
                       onChange={(e) => atualizarCampo("nome", e.target.value)}
                     />
                     <input
+                      className="input-edit-produto"
                       value={dadosEdicao.quantidade}
                       onChange={(e) =>
                         atualizarCampo("quantidade", e.target.value)
                       }
                     />
                     <input
+                      className="input-edit-produto"
                       value={dadosEdicao.comprimento}
                       onChange={(e) =>
                         atualizarCampo("comprimento", e.target.value)
                       }
                     />
                     <input
+                      className="input-edit-produto"
                       value={dadosEdicao.altura}
                       onChange={(e) => atualizarCampo("altura", e.target.value)}
                     />
                     <input
+                      className="input-edit-produto"
                       value={dadosEdicao.largura}
                       onChange={(e) =>
                         atualizarCampo("largura", e.target.value)
                       }
                     />
                     <input
+                      className="input-edit-produto"
                       value={dadosEdicao.cor}
                       onChange={(e) => atualizarCampo("cor", e.target.value)}
                     />
                     <input
+                      className="input-edit-produto"
                       value={dadosEdicao.peso}
                       onChange={(e) => atualizarCampo("peso", e.target.value)}
                     />
                     <input
+                      className="input-edit-produto"
                       value={dadosEdicao.valor}
                       onChange={(e) => atualizarCampo("valor", e.target.value)}
                     />
-                    <input
+                    <select
                       value={dadosEdicao.materia_prima}
                       onChange={(e) =>
                         atualizarCampo("materia_prima", e.target.value)
                       }
-                    />
+                    >
+                      {materia.map((materia) => (
+                        <option key={materia.id} value={materia.id}>
+                          {materia.nome}
+                        </option>
+                      ))}
+                    </select>
                   </>
                 ) : (
                   <>
