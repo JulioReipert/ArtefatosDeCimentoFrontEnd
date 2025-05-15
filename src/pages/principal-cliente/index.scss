@@ -50,7 +50,7 @@
           margin-right: 20px;
         }
         .info-item-lista {
-          padding-left: 45px;
+          padding-left: 38px;
           margin-bottom: 20px;
           display: grid;
           grid-auto-flow: column;
@@ -58,13 +58,13 @@
           align-items: center;
 
           grid-template-columns:
-            5%
-            10%
-            10%
-            13%
-            13%
-            20%
-            auto;
+          5%
+          17%
+          25.5%
+          9.7%
+          8%
+          8%
+          10%;
         }
         .item-lista {
           width: 1250px;
@@ -76,8 +76,65 @@
           transition: transform 0.2s ease, box-shadow 0.2s ease;
 
           list-style: none;
+         
+          display: flex;
+          flex-direction: row;
         }
+        .cliente-infos {
+          display: grid;
+          grid-auto-flow: column;
+          align-items: center;
+          grid-template-columns:
+          3%
+          20%
+          30%
+          10%
+          10%
+          6%
+          10%;
+          gap: 35px;
 
+          label {
+            font-size: 14px;
+            display: inline-block;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+         overflow: hidden;
+          }
+
+          .cliente-infos-id {
+            min-width: 25px;
+            max-width: 25px;
+          }
+
+          .cliente-infos-nome {
+            min-width: 200px;
+            max-width: 200px;
+          }
+
+          .cliente-infos-email {
+            min-width: 300px;
+            max-width: 300px;
+          }
+
+          .cliente-infos-telefone {
+            min-width: 90px;
+            max-width: 90px;
+          }
+          .cliente-infos-celular {
+            min-width: 90px;
+            max-width: 90px;
+          }
+          .cliente-infos-tipo_documento {
+            min-width: 20px;
+            max-width: 20px;
+          }
+          .cliente-infos-numero_documento {
+            min-width: 100px;
+            max-width: 100px;
+          }
+
+        }
         .item-lista:hover {
           transform: scale(1.001);
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

@@ -74,8 +74,8 @@ export default function PrincipalCliente() {
               <label>email</label>
               <label>telefone</label>
               <label>celular</label>
-              <label>tipo documento</label>
-              <label>num. documento</label>
+              <label>tipo doc.</label>
+              <label>num. doc.</label>
             </div>
             {cliente.map((cliente) => (
               <li key={cliente.id} className="item-lista">
@@ -129,11 +129,17 @@ export default function PrincipalCliente() {
                     />
                   </>
                 ) : (
+                  <div className="cliente-infos">
                   <>
-                    {cliente.id} - {cliente.nome} - {cliente.email} -{" "}
-                    {cliente.telefone} - {cliente.celular} -{" "}
-                    {cliente.tipo_documento} - {cliente.numero_documento}
+                    <label className="cliente-infos-id">{cliente.id}</label>
+                    <label className="cliente-infos-nome">{cliente.nome}</label>
+                    <label className="cliente-infos-email">{cliente.email}</label>
+                    <label className="cliente-infos-telefone">{cliente.telefone}</label>
+                    <label className="cliente-infos-celular">{cliente.celular}</label>
+                    <label className="cliente-infos-tipo_documento">{cliente.tipo_documento}</label>
+                    <label className="cliente-infos-numero_documento">{cliente.numero_documento}</label>
                   </>
+                  </div>
                 )}
               </li>
             ))}

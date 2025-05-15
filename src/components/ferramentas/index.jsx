@@ -8,7 +8,7 @@ export default function Ferramentas({ Editar, Excluir }) {
     <div className="comp-ferramentas">
       <EditarIcon onClick={Editar} />
       <DeletarIcon onClick={Excluir} />
-      <FiltroIcon />
+      {/* <FiltroIcon /> */}
     </div>
   );
 }

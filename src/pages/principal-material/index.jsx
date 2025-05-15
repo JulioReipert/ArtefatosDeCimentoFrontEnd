@@ -96,9 +96,13 @@ export default function PrincipalMaterial() {
                     />
                   </>
                 ) : (
+                  <div className="material-infos">
                   <>
-                    {materia.id} - {materia.nome} - {materia.quantidade}
+                    <label>{materia.id}</label>
+                    <label>{materia.nome}</label>
+                    <label>{materia.quantidade}</label>
                   </>
+                  </div>
                 )}
               </li>
             ))}

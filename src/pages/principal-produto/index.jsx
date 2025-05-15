@@ -81,7 +81,7 @@ export default function PrincipalProduto() {
             <div className="info-item-lista">
               <label>ID</label>
               <label>nome</label>
-              <label>quantidade</label>
+              <label>qtd</label>
               <label>comprimento</label>
               <label>altura</label>
               <label>largura</label>
@@ -164,13 +164,20 @@ export default function PrincipalProduto() {
                       ))}
                     </select>
                   </>
-                ) : (
+                ) : ( <div className="produtos-infos">
                   <>
-                    {produto.id} - {produto.nome} - {produto.quantidade} -{" "}
-                    {produto.comprimento} - {produto.altura} - {produto.largura}{" "}
-                    - {produto.cor}- {produto.peso}- {produto.valor}-{" "}
-                    {produto.materia_prima}
+                    <label>{produto.id}</label>
+                    <label>{produto.nome}</label>
+                    <label> {produto.quantidade}</label>
+                    <label>{produto.comprimento}</label>
+                    <label> {produto.altura}</label>
+                    <label> {produto.largura}</label>
+                    <label>{produto.cor}</label>
+                    <label> {produto.peso}</label>
+                    <label>{produto.valor}</label>
+                    <label> {produto.materia_prima}</label>
                   </>
+                  </div>
                 )}
               </li>
             ))}
