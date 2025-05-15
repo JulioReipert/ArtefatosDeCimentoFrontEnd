@@ -58,13 +58,13 @@
           align-items: center;
 
           grid-template-columns:
-          5%
-          17%
-          25.5%
-          9.7%
-          8%
-          8%
-          10%;
+            5%
+            17%
+            25.5%
+            9.7%
+            8%
+            8%
+            10%;
         }
         .item-lista {
           width: 1250px;
@@ -76,7 +76,7 @@
           transition: transform 0.2s ease, box-shadow 0.2s ease;
 
           list-style: none;
-         
+
           display: flex;
           flex-direction: row;
         }
@@ -85,26 +85,26 @@
           grid-auto-flow: column;
           align-items: center;
           grid-template-columns:
-          3%
-          20%
-          30%
-          10%
-          10%
-          6%
-          10%;
+            4%
+            20%
+            30%
+            10%
+            10%
+            6%
+            10%;
           gap: 35px;
 
           label {
             font-size: 14px;
             display: inline-block;
-         white-space: nowrap;
-         text-overflow: ellipsis;
-         overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
           }
 
           .cliente-infos-id {
             min-width: 25px;
-            max-width: 25px;
+            max-width: 35px;
           }
 
           .cliente-infos-nome {
@@ -133,7 +133,6 @@
             min-width: 100px;
             max-width: 100px;
           }
-
         }
         .item-lista:hover {
           transform: scale(1.001);

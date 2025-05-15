@@ -164,19 +164,25 @@ export default function PrincipalProduto() {
                       ))}
                     </select>
                   </>
-                ) : ( <div className="produtos-infos">
-                  <>
-                    <label>{produto.id}</label>
-                    <label>{produto.nome}</label>
-                    <label> {produto.quantidade}</label>
-                    <label>{produto.comprimento}</label>
-                    <label> {produto.altura}</label>
-                    <label> {produto.largura}</label>
-                    <label>{produto.cor}</label>
-                    <label> {produto.peso}</label>
-                    <label>{produto.valor}</label>
-                    <label> {produto.materia_prima}</label>
-                  </>
+                ) : (
+                  <div className="produtos-infos">
+                    <>
+                      <label>{produto.id}</label>
+                      <label>{produto.nome}</label>
+                      <label> {produto.quantidade}</label>
+                      <label>{produto.comprimento}</label>
+                      <label> {produto.altura}</label>
+                      <label> {produto.largura}</label>
+                      <label>{produto.cor}</label>
+                      <label> {produto.peso}</label>
+                      <label>{produto.valor}</label>
+                      <label className="produto-infos-material">
+                        {(
+                          materia.find((m) => m.id === produto.materia_prima) ||
+                          {}
+                        ).nome || "---"}
+                      </label>
+                    </>
                   </div>
                 )}
               </li>
