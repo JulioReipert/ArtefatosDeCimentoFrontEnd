@@ -21,15 +21,14 @@
 .page-login {
   display: flex;
   flex-direction: row;
-  height: 1024px;
   background: #d9f0ff url("/assets/images/fundo.png") repeat;
-  background-size: 100px 100px;
+  background-size: 80px 80px;
   background-blend-mode: normal, plus-lighter;
 }
 
 .logo {
-  width: 900px;
-  height: 1024px;
+  width: 800px;
+  height: 738px;
   flex-shrink: 0;
   background: #293241;
 
@@ -39,7 +38,7 @@
     justify-content: center;
     width: 610px;
     height: 252px;
-    padding: 320px 0 0 190px;
+    padding: 300px 0 0 150px;
     flex-shrink: 0;
 
     color: #fff;
@@ -49,7 +48,7 @@
 
   .sub-titulo {
     width: 344px;
-    margin: 80px 0 0 260px;
+    margin: 80px 0 0 220px;
 
     color: #fff;
     text-align: center;
@@ -58,17 +57,17 @@
 }
 
 .login-section {
-  width: 442px;
-  height: 1024px;
-  margin-left: 254.5px;
-  padding: 150px 0 0 110px;
+  width: 350px;
+  height: auto;
+  margin-left: 185px;
+  padding: 130px 0 0 80px;
   flex-shrink: 0;
   background: #fff;
   box-shadow: 0px 19px 38px rgba(0, 0, 0, 0.3),
     0px 15px 12px rgba(0, 0, 0, 0.22);
 
   .seta-retorno {
-    margin-left: 200px;
+    margin-left: 160px;
   }
 
   .informacoes {

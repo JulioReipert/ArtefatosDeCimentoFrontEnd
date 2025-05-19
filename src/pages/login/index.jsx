@@ -23,6 +23,12 @@ export default function Login() {
     }
   }
 
+  const handleKeyPress = (e) => {
+    if(e.key === "Enter") {
+      Entrar();
+    }
+  }
+
   return (
     <div className="page-login">
       <div className="logo">
@@ -48,6 +54,7 @@ export default function Login() {
               placeholder="Insira seu E-mail"
               className="input"
               onChange={(e) => setEmail(e.target.value)}
+              onKeyDown={handleKeyPress}
             />
           </div>
 
@@ -58,6 +65,7 @@ export default function Login() {
               placeholder="Insira sua senha"
               className="input"
               onChange={(e) => setSenha(e.target.value)}
+              onKeyDown={handleKeyPress}
             />
           </div>
 
@@ -65,9 +73,6 @@ export default function Login() {
             Entrar
           </button>
 
-          <Link to="">
-            <h2 className="esqueci-senha">Esqueci minha senha</h2>
-          </Link>
         </div>
       </section>
     </div>

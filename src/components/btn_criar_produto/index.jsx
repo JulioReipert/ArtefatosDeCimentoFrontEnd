@@ -75,7 +75,7 @@ export default function BtnCriarProduto({ fetchProdutos }) {
             <label>Nome:</label>
             <input
               type="text"
-              className="input"
+              className="input-prod"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
             />
@@ -83,7 +83,7 @@ export default function BtnCriarProduto({ fetchProdutos }) {
             <label>Quantidade:</label>
             <input
               type="text"
-              className="input"
+              className="input-prod"
               value={quantidade}
               onChange={(e) => setQuantidade(e.target.value)}
             />
@@ -91,7 +91,7 @@ export default function BtnCriarProduto({ fetchProdutos }) {
             <label>Comprimento:</label>
             <input
               type="text"
-              className="input"
+              className="input-prod"
               value={comprimento}
               onChange={(e) => setComprimento(e.target.value)}
             />
@@ -99,7 +99,7 @@ export default function BtnCriarProduto({ fetchProdutos }) {
             <label>Altura:</label>
             <input
               type="text"
-              className="input"
+              className="input-prod"
               value={altura}
               onChange={(e) => setAltura(e.target.value)}
             />
@@ -107,7 +107,7 @@ export default function BtnCriarProduto({ fetchProdutos }) {
             <label>Largura:</label>
             <input
               type="text"
-              className="input"
+              className="input-prod"
               value={largura}
               onChange={(e) => setLargura(e.target.value)}
             />
@@ -115,35 +115,41 @@ export default function BtnCriarProduto({ fetchProdutos }) {
             <label>Cor:</label>
             <input
               type="text"
-              className="input"
+              className="input-prod"
               value={cor}
               onChange={(e) => setCor(e.target.value)}
             />
             <label>Peso:</label>
             <input
               type="text"
-              className="input"
+              className="input-prod"
               value={peso}
               onChange={(e) => setPeso(e.target.value)}
             />
             <label>Valor:</label>
             <input
               type="text"
-              className="input"
+              className="input-prod"
               value={valor}
               onChange={(e) => setValor(e.target.value)}
             />
             <label>Material:</label>
-            <select
-              value={materiaPrima}
-              onChange={(e) => setMateriaPrima(e.target.value)}
-            >
-              {materia.map((materia) => (
-                <option key={materia.id} value={materia.id}>
-                  {materia.nome}
-                </option>
-              ))}
-            </select>
+            {materia.length === 0 ? (
+              <p>Nenhuma matéria-prima disponível no momento.</p>
+            ) : (
+              <select
+                className="select-prod"
+                value={materiaPrima}
+                onChange={(e) => setMateriaPrima(e.target.value)}
+              >
+                <option value="">Selecione</option>
+                {materia.map((materia) => (
+                  <option key={materia.id} value={materia.id}>
+                    {materia.nome}
+                  </option>
+                ))}
+              </select>
+            )}
 
             <button className="btn-cadastrar" type="submit">
               Cadastrar

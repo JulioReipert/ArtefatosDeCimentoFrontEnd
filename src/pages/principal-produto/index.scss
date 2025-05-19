@@ -4,16 +4,16 @@
 }
 
 .pagina-principal-produto {
-  height: 886px;
+  height: auto;
   background: #d9f0ff url("/assets/images/fundo.png") repeat;
-  background-size: 100px 100px;
+  background-size: 80px 80px;
   background-blend-mode: normal, plus-lighter;
 
   main {
     display: flex;
     flex-direction: row;
-    width: 1660px;
-    height: 886px;
+    width: 1350px;
+    height: 600px;
     flex-shrink: 0;
 
     background: #fff;
@@ -26,8 +26,8 @@
       .lista-produto-topo {
         display: flex;
         flex-direction: row;
-        margin-top: 80px;
-        margin-left: 80px;
+        margin-top: 20px;
+        margin-left: 40px;
         .titulo {
           color: #293241;
           font-family: helvetica, sans-serif;
@@ -37,16 +37,19 @@
           line-height: normal;
         }
         .ferramentas {
-          margin-left: 950px;
+          margin-left: 666px;
         }
       }
 
       .lista-produto {
-        margin-top: 50px;
-        margin-left: 80px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 490px;
+        margin-top: 40px;
+        margin-left: 40px;
 
-        input {
-          width: 100px;
+        input { 
+         
           border-radius: 5px;
           margin-right: 20px;
         }
@@ -55,7 +58,7 @@
           width: 100px;
           border-radius: 5px;
         }
-        .info-item-lista {
+        .info-item-lista-produto {
           padding-left: 45px;
           margin-bottom: 20px;
           display: grid;
@@ -64,27 +67,28 @@
           align-items: center;
 
           grid-template-columns:
-            8%
-            7.5%
             5%
-            9.5%
+            8%
+            6%
+            12%
             7%
             8.5%
-            7.5%
+            9%
             7%
-            6%
+            8%
             auto;
         }
-        .item-lista {
+        .item-lista-produto {
           font-size: 14px;
           align-items: center;
           display: flex;
           flex-direction: row;
-          width: 1250px;
-          height: 65px;
+
+          width: 1050px;
+          height: 60px;
           border-radius: 6px;
           background: #f0f0f0;
-          margin-bottom: 20px;
+          margin-bottom: 12px;
           transition: transform 0.2s ease, box-shadow 0.2s ease;
 
           list-style: none;
@@ -92,11 +96,11 @@
 
         .produtos-infos {
           display: grid;
-          grid-auto-flow: column;
+          grid-auto-flow: row;
           align-items: center;
           grid-template-columns:
-            5%
-            5%
+           2%
+            2%
             5%
             5%
             5%
@@ -105,7 +109,7 @@
             5%
             5%
             5%;
-          gap: 60px;
+          gap: 10px;
         }
 
         label {
@@ -120,14 +124,12 @@
         }
 
         .checkbox-produto {
-          margin-left: -32.5px;
-          margin-right: -15px;
+         
           transform: scale(1.2);
           border: 2px solid #4a90e2;
           border-radius: 6px;
           background-color: #fff;
           cursor: pointer;
-          position: relative;
           transition: background-color 0.2s ease, border-color 0.2s ease;
         }
       }

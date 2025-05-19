@@ -156,9 +156,10 @@ export default function PrincipalCliente() {
               </li>
             ))}
 
-            <BtnCriarCliente fetchClientes={fetchClientes} />
+           
           </div>
         </div>
+         <BtnCriarCliente fetchClientes={fetchClientes} />
       </main>
     </div>
   );

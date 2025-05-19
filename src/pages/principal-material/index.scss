@@ -4,16 +4,16 @@
 }
 
 .pagina-principal-material {
-  height: 886px;
+  height: auto;
   background: #d9f0ff url("/assets/images/fundo.png") repeat;
-  background-size: 100px 100px;
+  background-size: 80px 80px;
   background-blend-mode: normal, plus-lighter;
 
   main {
     display: flex;
     flex-direction: row;
-    width: 1660px;
-    height: 886px;
+    width: 1350px;
+    height: 600px;
     flex-shrink: 0;
 
     background: #fff;
@@ -26,8 +26,8 @@
       .lista-material-topo {
         display: flex;
         flex-direction: row;
-        margin-top: 80px;
-        margin-left: 80px;
+        margin-top: 20px;
+        margin-left: 40px;
         .titulo {
           color: #293241;
           font-family: helvetica, sans-serif;
@@ -37,20 +37,23 @@
           line-height: normal;
         }
         .ferramentas {
-          margin-left: 950px;
+          margin-left: 703px;
         }
       }
 
       .lista-material {
-        margin-top: 50px;
-        margin-left: 80px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 490px;
+        margin-top: 40px;
+        margin-left: 40px;
 
         input {
           border-radius: 5px;
           margin-right: 20px;
         }
         .info-item-lista-material {
-          padding-left: 45px;
+          padding-left: 38px;
           margin-bottom: 20px;
           display: grid;
           grid-auto-flow: column;
@@ -58,7 +61,7 @@
           align-items: center;
 
           grid-template-columns:
-            8%
+            9%
             12.5%
             10%;
         }
@@ -67,7 +70,7 @@
           display: flex;
           flex-direction: row;
          
-          width: 1250px;
+          width: 1050px;
           height: 50px;
           border-radius: 6px;
           background: #f0f0f0;
@@ -84,9 +87,9 @@
           align-items: center;
           grid-template-columns:
           1%
-          20%
-          30%;
-          gap: 120px;
+          18%
+          20%;
+          gap: 100px;
         }
         label {
           min-width: 10px;

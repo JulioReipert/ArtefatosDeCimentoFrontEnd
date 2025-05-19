@@ -78,7 +78,7 @@ export default function PrincipalProduto() {
           </div>
 
           <div className="lista-produto">
-            <div className="info-item-lista">
+            <div className="info-item-lista-produto">
               <label>ID</label>
               <label>nome</label>
               <label>qtd</label>
@@ -91,7 +91,7 @@ export default function PrincipalProduto() {
               <label>material</label>
             </div>
             {produto.map((produto) => (
-              <li key={produto.id} className="item-lista">
+              <li key={produto.id} className="item-lista-produto">
                 <input
                   type="checkbox"
                   className="checkbox-produto"

@@ -4,16 +4,16 @@
 }
 
 .pagina-principal {
-  height: 886px;
+  height: auto;
   background: #d9f0ff url("/assets/images/fundo.png") repeat;
-  background-size: 100px 100px;
+  background-size: 80px 80px;
   background-blend-mode: normal, plus-lighter;
 
   main {
     display: flex;
     flex-direction: row;
-    width: 1660px;
-    height: 886px;
+    width: 1350px;
+    height: 600px;
     flex-shrink: 0;
 
     background: #fff;
@@ -26,8 +26,8 @@
       .lista-cliente-topo {
         display: flex;
         flex-direction: row;
-        margin-top: 80px;
-        margin-left: 80px;
+        margin-top: 20px;
+        margin-left: 40px;
         .titulo {
           color: #293241;
           font-family: helvetica, sans-serif;
@@ -37,13 +37,16 @@
           line-height: normal;
         }
         .ferramentas {
-          margin-left: 950px;
+          margin-left: 680px;
         }
       }
 
       .lista-cliente {
-        margin-top: 50px;
-        margin-left: 80px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 490px;
+        margin-top: 40px;
+        margin-left: 40px;
 
         input {
           border-radius: 5px;
@@ -59,7 +62,7 @@
 
           grid-template-columns:
             5%
-            17%
+            20%
             25.5%
             9.7%
             8%
@@ -67,7 +70,7 @@
             10%;
         }
         .item-lista {
-          width: 1250px;
+          width: 1050px;
           height: 50px;
           border-radius: 6px;
           background: #f0f0f0;
@@ -85,12 +88,12 @@
           grid-auto-flow: column;
           align-items: center;
           grid-template-columns:
-            4%
-            20%
-            30%
-            10%
-            10%
-            6%
+            2.5%
+            18%
+            23.5%
+            7.5%
+            9%
+            3.2%
             10%;
           gap: 35px;
 

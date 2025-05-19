@@ -12,16 +12,16 @@ export default function Header() {
     <header className="comp-header">
       <div className="title-group">
         <h1 className="tittle">BUSQUETS</h1>
-        <h2 className="sub-tittle">Artefatos de Cimento</h2>
+        <p className="sub-tittle">Artefatos de Cimento</p>
       </div>
 
       <div className="login">
         {mostrarLogin ? (
-        <div>
-          <p>(11) 97241-6598</p>
-          <p>busquetcon1@gmail.com</p>
-          <p>Rua Pedrinho Roschel, 80 A - Vila Roschel, São Paulo, SP</p>
-        </div>
+          <div>
+            <p>(11) 97241-6598</p>
+            <p>busquetcon1@gmail.com</p>
+            <p>Rua Pedrinho Roschel, 80 A - Vila Roschel, São Paulo, SP</p>
+          </div>
         ) : (
           <Link to="/" className="seta-volta">
             <SetaRetorno />
