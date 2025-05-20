@@ -5,7 +5,8 @@ import Carrossel from "../../components/carrossel";
 import Produto from "../../components/produtos";
 
 import { ReactComponent as Banner } from "../../assets/images/Banner-Artefatos-de-Cimento.svg";
-import imgCobogo from "../../assets/images/cobogo_4pontas.png";
+import imgCobogo from "../../assets/images/tipos cobogós.png";
+import imgCobogo4pontas from "../../assets/images/cobogo_4pontas.png";
 import imgCaixa from "../../assets/images/caixa_esgoto.png";
 import imgPia from "../../assets/images/pia_cimento.png";
 import imgTampa from "../../assets/images/tampa_esgoto.png";
@@ -35,12 +36,15 @@ export default function App() {
 
       <div id="inicio" className="banner-container">
         <Banner className="banner" />
+        <div className="botao-whatsapp">
+          <a href="https://wa.me/5511972416598">WHATSAPP</a>
+        </div>
       </div>
 
       <div id="produtos" className="carrossel">
         <label>Produtos</label>
         <div className="carrossel-itens">
-          <Carrossel titulo="Cobogó" imagem={imgCobogo} link="#cobogo" />
+          <Carrossel titulo="Cobogó" imagem={imgCobogo4pontas} link="#cobogo" />
           <Carrossel titulo="Tampa de Fossa" imagem={imgTampa} link="#tampa" />
           <Carrossel titulo="Pia de Cimento" imagem={imgPia} link="#pia" />
           <Carrossel titulo="Caixa de Esgoto" imagem={imgCaixa} link="#caixa" />
