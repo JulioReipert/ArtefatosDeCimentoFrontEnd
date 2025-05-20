@@ -17,14 +17,7 @@ export default function Sidebar() {
         >
           Clientes
         </Link>
-        <Link
-          to="/principal-entrega"
-          className={
-            isActive("/principal-entrega") ? "menu-item ativo" : "menu-item"
-          }
-        >
-          Entregas
-        </Link>
+
         <Link
           to="/principal-produto"
           className={
