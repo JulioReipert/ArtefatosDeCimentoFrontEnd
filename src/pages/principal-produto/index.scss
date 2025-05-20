@@ -37,29 +37,23 @@
           line-height: normal;
         }
         .ferramentas {
-          margin-left: 666px;
+          margin-left: 703px;
         }
       }
 
       .lista-produto {
         overflow-y: auto;
         overflow-x: hidden;
-        max-height: 490px;
+        
         margin-top: 40px;
         margin-left: 40px;
 
-        input { 
-         
+        input {
           border-radius: 5px;
           margin-right: 20px;
         }
-
-        select {
-          width: 100px;
-          border-radius: 5px;
-        }
         .info-item-lista-produto {
-          padding-left: 45px;
+          padding-left: 38px;
           margin-bottom: 20px;
           display: grid;
           grid-auto-flow: column;
@@ -67,28 +61,21 @@
           align-items: center;
 
           grid-template-columns:
-            5%
-            8%
-            6%
-            12%
-            7%
-            8.5%
             9%
-            7%
-            8%
-            auto;
+            12.5%
+            10%;
         }
         .item-lista-produto {
           font-size: 14px;
-          align-items: center;
           display: flex;
           flex-direction: row;
-
+         
           width: 1050px;
-          height: 60px;
+          height: 50px;
           border-radius: 6px;
           background: #f0f0f0;
-          margin-bottom: 12px;
+          margin-bottom: 20px;
+          padding: 12px;
           transition: transform 0.2s ease, box-shadow 0.2s ease;
 
           list-style: none;
@@ -99,37 +86,31 @@
           grid-auto-flow: row;
           align-items: center;
           grid-template-columns:
-           2%
-            2%
-            5%
-            5%
-            5%
-            5%
-            5%
-            5%
-            5%
-            5%;
-          gap: 10px;
+          1%
+          18%
+          20%;
+          gap: 100px;
         }
-
         label {
-          min-width: 50px;
-          max-width: 50px;
+          min-width: 10px;
+          max-width: 10px;
         }
 
-        .item-lista:hover {
+
+        .item-lista-material:hover {
           transform: scale(1.001);
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
           background-color: #dfdfdf;
         }
 
         .checkbox-produto {
-         
+          margin-right: 15px;
           transform: scale(1.2);
           border: 2px solid #4a90e2;
           border-radius: 6px;
           background-color: #fff;
           cursor: pointer;
+          position: relative;
           transition: background-color 0.2s ease, border-color 0.2s ease;
         }
       }

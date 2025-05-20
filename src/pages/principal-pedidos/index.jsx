@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { BuscarClientes, BuscarPedido } from "../../services/buscar";
 import { ExcluirPedido } from "../../services/deletar";
 import { EditarProduto } from "../../services/editar";
+import { formatarDataBR } from "../../utils/date";
 import BtnCriarPedido from "../../components/btn_criar_pedido";
 
 export default function PrincipalPedido() {
@@ -127,14 +128,14 @@ export default function PrincipalPedido() {
                   <div className="pedidos-infos">
                     <>
                       <label>{pedido.id}</label>
-                      <label>{pedido.data_entrega}</label>
-
+                      <label>{formatarDataBR(pedido.data_entrega)}</label>
+                      
                       <label className="pedido-infos-cliente">
                         {(cliente.find((c) => c.id === pedido.cliente) || {})
                           .nome || "---"}
                       </label>
-
-                      <label>{pedido.emissao}</label>
+<label>{pedido.endereco}</label>
+                      <label>{formatarDataBR(pedido.emissao)}</label>
                     </>
                   </div>
                 )}

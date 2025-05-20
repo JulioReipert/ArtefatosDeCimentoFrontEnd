@@ -39,3 +39,8 @@ export function getCurrentDate() {
       seconds
     );
   }
+  
+export function formatarDataBR(dataISO) {
+  const data = new Date(dataISO);
+  return data.toLocaleDateString("pt-BR");
+}

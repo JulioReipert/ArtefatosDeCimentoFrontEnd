@@ -61,15 +61,17 @@
           align-items: center;
 
           grid-template-columns:
-            9%
-            12.5%
+            3%
+            10%
+            20%
+            28%
             10%;
         }
         .item-lista-pedido {
           font-size: 14px;
           display: flex;
           flex-direction: row;
-         
+
           width: 1050px;
           height: 50px;
           border-radius: 6px;
@@ -81,21 +83,22 @@
           list-style: none;
         }
 
-        .pedido-infos {
+        .pedidos-infos {
           display: grid;
           grid-auto-flow: row;
           align-items: center;
           grid-template-columns:
-          1%
-          18%
-          20%;
-          gap: 100px;
+           3%
+            9.2%
+            19.5%
+            27.5%
+            10%;
+            gap: 20px;
         }
         label {
-          min-width: 10px;
-          max-width: 10px;
+          min-width: 250px;
+          max-width: 250px;
         }
-
 
         .item-lista-pedido:hover {
           transform: scale(1.001);
