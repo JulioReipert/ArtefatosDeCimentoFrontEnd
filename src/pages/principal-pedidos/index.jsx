@@ -127,15 +127,15 @@ export default function PrincipalPedido() {
                 ) : (
                   <div className="pedidos-infos">
                     <>
-                      <label>{pedido.id}</label>
-                      <label>{formatarDataBR(pedido.data_entrega)}</label>
+                      <label className="label-ped-id">{pedido.id}</label>
+                      <label className="label-ped-entrega">{formatarDataBR(pedido.data_entrega)}</label>
                       
-                      <label className="pedido-infos-cliente">
+                      <label className="label-ped-nome">
                         {(cliente.find((c) => c.id === pedido.cliente) || {})
                           .nome || "---"}
                       </label>
-<label>{pedido.endereco}</label>
-                      <label>{formatarDataBR(pedido.emissao)}</label>
+<label className="label-ped-endereco">{pedido.endereco}</label>
+                      <label className="label-ped-emissao">{formatarDataBR(pedido.emissao)}</label>
                     </>
                   </div>
                 )}
