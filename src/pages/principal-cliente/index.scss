@@ -68,6 +68,9 @@
             8%
             8%
             10%;
+          label {
+            text-align: center;
+          }
         }
         .item-lista {
           width: 1050px;
@@ -82,59 +85,71 @@
 
           display: flex;
           flex-direction: row;
+          text-align: center;
         }
         .cliente-infos {
           display: grid;
           grid-auto-flow: column;
           align-items: center;
-          grid-template-columns:
-            2.5%
-            18%
-            23.5%
-            7.5%
-            9%
-            3.2%
-            10%;
+          grid-template-columns: 2.5% 17% 24% 8% 8% 3.2% auto;
           gap: 35px;
 
           label {
             font-size: 14px;
             display: inline-block;
             white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
+
+            overflow: auto;
           }
 
+          label::-webkit-scrollbar {
+            height: 4px;
+          }
+          label::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+          }
+
+          label::-webkit-scrollbar-track {
+            background: transparent;
+          }
           .cliente-infos-id {
             min-width: 25px;
             max-width: 35px;
+            text-align: center;
           }
 
           .cliente-infos-nome {
-            min-width: 200px;
+            min-width: 180px;
             max-width: 200px;
+            text-align: center;
           }
 
           .cliente-infos-email {
-            min-width: 300px;
-            max-width: 300px;
+            min-width: 260px;
+            max-width: 260px;
+            text-align: center;
           }
 
           .cliente-infos-telefone {
             min-width: 90px;
             max-width: 90px;
+            text-align: center;
           }
           .cliente-infos-celular {
             min-width: 90px;
             max-width: 90px;
+            text-align: center;
           }
           .cliente-infos-tipo_documento {
-            min-width: 20px;
+            min-width: 37px;
             max-width: 20px;
+            text-align: center;
           }
           .cliente-infos-numero_documento {
             min-width: 100px;
             max-width: 100px;
+            text-align: center;
           }
         }
         .item-lista:hover {

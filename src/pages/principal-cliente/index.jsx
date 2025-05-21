@@ -13,6 +13,10 @@ export default function PrincipalCliente() {
   const [selecionadoId, setSelecionadoId] = useState(null);
   const [dadosEdicao, setDadosEdicao] = useState(null);
 
+  const tipoDocLabel = {
+    1: "CPF",
+    2: "CNPJ",
+  };
   async function fetchClientes() {
     const dados = await BuscarClientes();
     setCliente(dados);
@@ -94,20 +98,24 @@ export default function PrincipalCliente() {
                   <>
                     <input
                       value={dadosEdicao.nome}
+                      placeholder="nome"
                       onChange={(e) => atualizarCampo("nome", e.target.value)}
                     />
                     <input
                       value={dadosEdicao.email}
+                      placeholder="email"
                       onChange={(e) => atualizarCampo("email", e.target.value)}
                     />
                     <input
                       value={dadosEdicao.telefone}
+                      placeholder="telefone"
                       onChange={(e) =>
                         atualizarCampo("telefone", e.target.value)
                       }
                     />
                     <input
                       value={dadosEdicao.celular}
+                      placeholder="celular"
                       onChange={(e) =>
                         atualizarCampo("celular", e.target.value)
                       }
@@ -123,6 +131,7 @@ export default function PrincipalCliente() {
                     </select>
                     <input
                       value={dadosEdicao.numero_documento}
+                      placeholder="num. documento"
                       onChange={(e) =>
                         atualizarCampo("numero_documento", e.target.value)
                       }
@@ -145,7 +154,7 @@ export default function PrincipalCliente() {
                         {cliente.celular}
                       </label>
                       <label className="cliente-infos-tipo_documento">
-                        {cliente.tipo_documento}
+                        {tipoDocLabel[cliente.tipo_documento]}
                       </label>
                       <label className="cliente-infos-numero_documento">
                         {cliente.numero_documento}
@@ -155,11 +164,9 @@ export default function PrincipalCliente() {
                 )}
               </li>
             ))}
-
-           
           </div>
         </div>
-         <BtnCriarCliente fetchClientes={fetchClientes} />
+        <BtnCriarCliente fetchClientes={fetchClientes} />
       </main>
     </div>
   );

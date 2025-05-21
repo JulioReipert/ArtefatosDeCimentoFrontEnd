@@ -37,7 +37,9 @@ export default function App() {
       <div id="inicio" className="banner-container">
         <Banner className="banner" />
         <div className="botao-whatsapp">
-          <a href="https://wa.me/5511972416598">WHATSAPP</a>
+          <a href="https://wa.me/5511972416598" target="_blank">
+            WHATSAPP
+          </a>
         </div>
       </div>
 
@@ -110,7 +112,10 @@ export default function App() {
 
       <section id="localizacao" className="localizacao-section">
         <p className="localizacao-titulo">Localização </p>
-        <a href="https://www.google.com/maps/place/R.+Pedrinho+Roschel,+80+-+Vila+Roschel,+S%C3%A3o+Paulo+-+SP,+04891-050/@-23.8404707,-46.733015,19z/data=!3m1!4b1!4m6!3m5!1s0x94ce49e61752d631:0xb5d9ce52905540b9!8m2!3d-23.8404707!4d-46.7323713!16s%2Fg%2F11c5p0_7gl?authuser=0&entry=ttu&g_ep=EgoyMDI1MDUxMy4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <a
+          href="https://www.google.com/maps/place/R.+Pedrinho+Roschel,+80+-+Vila+Roschel,+S%C3%A3o+Paulo+-+SP,+04891-050/@-23.8404707,-46.733015,19z/data=!3m1!4b1!4m6!3m5!1s0x94ce49e61752d631:0xb5d9ce52905540b9!8m2!3d-23.8404707!4d-46.7323713!16s%2Fg%2F11c5p0_7gl?authuser=0&entry=ttu&g_ep=EgoyMDI1MDUxMy4xIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+        >
           <img src={imgMapa} alt="Mapa" />
         </a>
       </section>

@@ -16,6 +16,12 @@
 
   z-index: 1000;
 
+  .erro {
+    font-size: 12px;
+    color: red;
+    margin-top: -20px;
+  }
+
   .comp-btn-criar.girado {
     transform: rotate(45deg);
   }

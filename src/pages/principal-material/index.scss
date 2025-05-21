@@ -61,15 +61,15 @@
           align-items: center;
 
           grid-template-columns:
-            9%
-            12.5%
+            11%
+            11.5%
             10%;
         }
         .item-lista-material {
           font-size: 14px;
           display: flex;
           flex-direction: row;
-         
+
           width: 1050px;
           height: 50px;
           border-radius: 6px;
@@ -79,6 +79,16 @@
           transition: transform 0.2s ease, box-shadow 0.2s ease;
 
           list-style: none;
+
+          .input-material-edit1 {
+            max-width: 150px;
+            margin-left: 80px;
+          }
+
+          .input-material-edit {
+            max-width: 80px;
+            margin-left: 12px;
+          }
         }
 
         .material-infos {
@@ -86,16 +96,52 @@
           grid-auto-flow: row;
           align-items: center;
           grid-template-columns:
-          1%
-          18%
-          20%;
+            3%
+            18%
+            20%;
           gap: 100px;
+          text-align: center;
+          label {
+            font-size: 14px;
+            display: inline-block;
+            white-space: nowrap;
+
+            overflow: auto;
+          }
+
+          label::-webkit-scrollbar {
+            height: 4px;
+          }
+          label::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+          }
+
+          label::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          .label-mat-id {
+            max-width: 30px;
+          }
+
+          .label-mat-nome {
+            min-width: 80px;
+            max-width: 80px;
+            text-align: center;
+          }
+
+          .label-mat-qtd {
+            min-width: 50px;
+            max-width: 50px;
+            text-align: center;
+          }
         }
         label {
           min-width: 10px;
           max-width: 10px;
+          text-align: center;
+          min-width: 48px;
         }
-
 
         .item-lista-material:hover {
           transform: scale(1.001);

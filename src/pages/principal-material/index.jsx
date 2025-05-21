@@ -85,11 +85,16 @@ export default function PrincipalMaterial() {
                 {selecionadoId === materia.id ? (
                   <>
                     <input
+                      className="input-material-edit1"
                       value={dadosEdicao.nome}
+                      placeholder="nome"
                       onChange={(e) => atualizarCampo("nome", e.target.value)}
                     />
                     <input
-                      value={dadosEdicao.email}
+                      className="input-material-edit"
+                      type="number"
+                      value={dadosEdicao.quantidade}
+                      placeholder="quantidade"
                       onChange={(e) =>
                         atualizarCampo("quantidade", e.target.value)
                       }
@@ -97,11 +102,13 @@ export default function PrincipalMaterial() {
                   </>
                 ) : (
                   <div className="material-infos">
-                  <>
-                    <label>{materia.id}</label>
-                    <label>{materia.nome}</label>
-                    <label>{materia.quantidade}</label>
-                  </>
+                    <>
+                      <label className="label-mat-id">{materia.id}</label>
+                      <label className="label-mat-nome">{materia.nome}</label>
+                      <label className="label-mat-qtd">
+                        {materia.quantidade}
+                      </label>
+                    </>
                   </div>
                 )}
               </li>
