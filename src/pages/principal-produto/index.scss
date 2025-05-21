@@ -14,7 +14,6 @@
     flex-direction: row;
     width: 1350px;
     height: 600px;
-    flex-shrink: 0;
 
     background: #fff;
 
@@ -22,6 +21,11 @@
     margin-left: 100px;
     margin-top: 138px;
 
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
     .main-02 {
       .lista-produto-topo {
         display: flex;
@@ -37,14 +41,14 @@
           line-height: normal;
         }
         .ferramentas {
-          margin-left: 703px;
+          margin-left: 666px;
         }
       }
 
       .lista-produto {
         overflow-y: auto;
         overflow-x: hidden;
-        
+        max-height: 490px;
         margin-top: 40px;
         margin-left: 40px;
 
@@ -61,15 +65,22 @@
           align-items: center;
 
           grid-template-columns:
-            9%
-            12.5%
-            10%;
+            3.4%
+            14%
+            8%
+            6%
+            5%
+            6%
+            13%
+            8%
+            5.5%
+            14%;
+
+          label {
+            text-align: center;
+          }
         }
         .item-lista-produto {
-          font-size: 14px;
-          display: flex;
-          flex-direction: row;
-         
           width: 1050px;
           height: 50px;
           border-radius: 6px;
@@ -79,25 +90,133 @@
           transition: transform 0.2s ease, box-shadow 0.2s ease;
 
           list-style: none;
+
+          display: flex;
+          flex-direction: row;
+          text-align: center;
+
+          .input-ped-edit-nome {
+            max-width: 140px;
+            margin-left: 55px;
+          }
+
+          .input-ped-edit-qtd {
+            max-width: 50px;
+            margin-left: 8px;
+          }
+          .input-ped-edit-comp {
+            max-width: 50px;
+            margin-left: 12px;
+          }
+          .input-ped-edit-alt {
+            max-width: 50px;
+            margin-left: 6px;
+          }
+
+          .input-ped-edit-larg {
+            max-width: 50px;
+            margin-left: 1px;
+          }
+          .input-ped-edit-cor {
+            max-width: 120px;
+            margin-left: 10px;
+          }
+          .input-ped-edit-peso {
+            max-width: 60px;
+            margin-left: 13px;
+          }
+          .input-ped-edit-valor {
+            max-width: 60px;
+            margin-left: 3px;
+          }
+
+          select {
+            border-radius: 6px;
+            margin-left: -2px;
+          }
         }
 
         .produtos-infos {
           display: grid;
-          grid-auto-flow: row;
+          grid-auto-flow: column;
           align-items: center;
-          grid-template-columns:
-          1%
-          18%
-          20%;
-          gap: 100px;
-        }
-        label {
-          min-width: 100px;
-          max-width: 100px;
-        }
+          grid-template-columns: 2.5% 17.7% 6.5% 5.8% 5% 6% 15% 6% 8%;
+          gap: 28px;
 
+          label {
+            font-size: 14px;
+            display: inline-block;
+            white-space: nowrap;
 
-        .item-lista-material:hover {
+            overflow: auto;
+          }
+          label::-webkit-scrollbar {
+            height: 4px;
+          }
+          label::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+          }
+
+          label::-webkit-scrollbar-track {
+            background: transparent;
+          }
+
+          .produto-infos-id {
+            min-width: 25px;
+            max-width: 35px;
+            text-align: center;
+          }
+
+          .produto-infos-nome {
+            min-width: 150px;
+            max-width: 150px;
+            text-align: center;
+          }
+
+          .produto-infos-qtd {
+            min-width: 40px;
+            max-width: 40px;
+            text-align: center;
+          }
+
+          .produto-infos-comp {
+            min-width: 38px;
+            max-width: 38px;
+            text-align: center;
+          }
+          .produto-infos-alt {
+            min-width: 38px;
+            max-width: 38px;
+            text-align: center;
+          }
+          .produto-infos-larg {
+            min-width: 38px;
+            max-width: 38px;
+            text-align: center;
+          }
+          .produto-infos-cor {
+            min-width: 100px;
+            max-width: 100px;
+            text-align: center;
+          }
+          .produto-infos-peso {
+            min-width: 37px;
+            max-width: 37px;
+            text-align: center;
+          }
+          .produto-infos-valor {
+            min-width: 48px;
+            max-width: 48px;
+            text-align: center;
+          }
+          .produto-infos-material {
+            min-width: 85px;
+            max-width: 85px;
+            text-align: center;
+          }
+        }
+        .item-lista-produto:hover {
           transform: scale(1.001);
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
           background-color: #dfdfdf;

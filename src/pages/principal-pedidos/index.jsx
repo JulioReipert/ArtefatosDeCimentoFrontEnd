@@ -5,8 +5,8 @@ import Ferramentas from "../../components/ferramentas";
 import { useState, useEffect } from "react";
 import { BuscarClientes, BuscarPedido } from "../../services/buscar";
 import { ExcluirPedido } from "../../services/deletar";
-import { EditarProduto } from "../../services/editar";
-import { formatarDataBR } from "../../utils/date";
+import { EditarPedido } from "../../services/editar";
+import { formatarDataBR, formatarDataInput } from "../../utils/date";
 import BtnCriarPedido from "../../components/btn_criar_pedido";
 
 export default function PrincipalPedido() {
@@ -39,12 +39,11 @@ export default function PrincipalPedido() {
 
   async function salvarEdicao() {
     if (!dadosEdicao) return;
-    await EditarProduto(
+    await EditarPedido(
       selecionadoId,
       dadosEdicao.data_entrega,
       dadosEdicao.cliente,
-      dadosEdicao.endereco,
-      dadosEdicao.emissao
+      dadosEdicao.endereco
     );
     setSelecionadoId(null);
     setDadosEdicao(null);
@@ -97,13 +96,14 @@ export default function PrincipalPedido() {
                 {selecionadoId === pedido.id ? (
                   <>
                     <input
-                      className="input-edit-pedido"
-                      value={dadosEdicao.data_entrega}
+                      className="input-ped-edit-entrega"
+                      value={formatarDataInput(dadosEdicao.data_entrega)}
                       type="date"
                       onChange={(e) =>
                         atualizarCampo("data_entrega", e.target.value)
                       }
                     />
+
                     <select
                       value={dadosEdicao.cliente}
                       onChange={(e) =>
@@ -117,7 +117,7 @@ export default function PrincipalPedido() {
                       ))}
                     </select>
                     <input
-                      className="input-edit-pedido"
+                      className="input-ped-edit-end"
                       value={dadosEdicao.endereco}
                       onChange={(e) =>
                         atualizarCampo("endereco", e.target.value)
@@ -127,15 +127,21 @@ export default function PrincipalPedido() {
                 ) : (
                   <div className="pedidos-infos">
                     <>
-                      <label className="label-ped-id">{pedido.id}</label>
-                      <label className="label-ped-entrega">{formatarDataBR(pedido.data_entrega)}</label>
-                      
-                      <label className="label-ped-nome">
+                      <label className="pedido-infos-id">{pedido.id}</label>
+                      <label className="pedido-infos-entrega">
+                        {formatarDataBR(pedido.data_entrega)}
+                      </label>
+
+                      <label className="pedido-infos-nome">
                         {(cliente.find((c) => c.id === pedido.cliente) || {})
                           .nome || "---"}
                       </label>
-<label className="label-ped-endereco">{pedido.endereco}</label>
-                      <label className="label-ped-emissao">{formatarDataBR(pedido.emissao)}</label>
+                      <label className="pedido-infos-endereco">
+                        {pedido.endereco}
+                      </label>
+                      <label className="pedido-infos-emissao">
+                        {formatarDataBR(pedido.emissao)}
+                      </label>
                     </>
                   </div>
                 )}

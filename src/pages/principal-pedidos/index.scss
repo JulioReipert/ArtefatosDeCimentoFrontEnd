@@ -14,7 +14,6 @@
     flex-direction: row;
     width: 1350px;
     height: 600px;
-    flex-shrink: 0;
 
     background: #fff;
 
@@ -37,7 +36,7 @@
           line-height: normal;
         }
         .ferramentas {
-          margin-left: 703px;
+          margin-left: 680px;
         }
       }
 
@@ -61,17 +60,17 @@
           align-items: center;
 
           grid-template-columns:
-            3%
-            10%
-            20%
-            28%
-            10%;
+            3.4%
+            19%
+            15.5%
+            35%
+            3.5%;
+          label {
+            text-align: center;
+            white-space: nowrap;
+          }
         }
         .item-lista-pedido {
-          font-size: 14px;
-          display: flex;
-          flex-direction: row;
-
           width: 1050px;
           height: 50px;
           border-radius: 6px;
@@ -81,48 +80,88 @@
           transition: transform 0.2s ease, box-shadow 0.2s ease;
 
           list-style: none;
+
+          display: flex;
+          flex-direction: row;
+          text-align: center;
+
+          .input-ped-edit-entrega {
+            max-width: 160px;
+            margin-left: 75px;
+          }
+
+          .input-ped-edit-end {
+            max-width: 160px;
+            margin-left: 76px;
+          }
+
+          select {
+            margin-left: 2px;
+            border-radius: 6px;
+            margin-left: -2px;
+          }
         }
 
         .pedidos-infos {
           display: grid;
-          grid-auto-flow: row;
+          grid-auto-flow: column;
           align-items: center;
           grid-template-columns:
-           3%
-            9.2%
-            19.5%
-            27.5%
-            10%;
-            gap: 20px;
+            1%
+            20%
+            24%
+            30%
+            auto;
+          gap: 35px;
+          label {
+            font-size: 14px;
+            display: inline-block;
+            white-space: nowrap;
 
-            .lab-ped-id{
-          max-width: 30px;
-        }
+            overflow: auto;
+          }
 
-         .lab-ped-entrega {
+          label::-webkit-scrollbar {
+            height: 4px;
+          }
+          label::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+          }
 
-         }
+          label::-webkit-scrollbar-track {
+            background: transparent;
+          }
 
-         .lab-ped-nome {
-          min-width: 80px;
-            max-width: 80px;
-            text-align: center;
-         }
-
-          .lab-ped-endereco {
-            min-width: 150px;
-            max-width:  150px;
+          .pedido-infos-id {
+            min-width: 25px;
+            max-width: 25px;
             text-align: center;
           }
 
-         .lab-ped-emissao {
+          .pedido-infos-entrega {
+            min-width: 200px;
+            max-width: 200px;
+            text-align: center;
+          }
 
-         }
-        }
-        label {
-          min-width: 250px;
-          max-width: 250px;
-          
+          .pedido-infos-nome {
+            min-width: 180px;
+            max-width: 180px;
+            text-align: center;
+          }
+
+          .pedido-infos-endereco {
+            min-width: 230px;
+            max-width: 230px;
+            text-align: center;
+          }
+
+          .pedido-infos-emissao {
+            min-width: 90px;
+            max-width: 90px;
+            text-align: center;
+          }
         }
 
         .item-lista-pedido:hover {

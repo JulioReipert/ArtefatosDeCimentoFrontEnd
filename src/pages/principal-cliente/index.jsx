@@ -50,19 +50,17 @@ export default function PrincipalCliente() {
       novosErros.celular = true;
     }
 
-    if (
-      dadosEdicao.tipo_documento === "1" &&
-      !Validador.validarDocumento(dadosEdicao.numero_documento, "1")
-    ) {
-      novosErros.numero_documento = true;
-    }
+    // if (
+    //   dadosEdicao.tipo_documento === "1" &&
+    //   !Validador.validarDocumento(dadosEdicao.numero_documento, "1")
+    // ) {
+    //   novosErros.numero_documento = true;
+    // }
 
-    if (
-      dadosEdicao.tipo_documento === "2" &&
-      !Validador.validarDocumento(dadosEdicao.numero_documento, "2")
-    ) {
-      novosErros.numero_documento = true;
-    }
+    // if (
+    //   dadosEdicao.tipo_documento === "2" &&
+    //   !Validador.validarDocumento(dadosEdicao.numero_documento, "2")
+    // )
 
     if (Object.keys(novosErros).length > 0) {
       setErros(novosErros);

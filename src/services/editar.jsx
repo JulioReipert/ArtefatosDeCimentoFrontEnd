@@ -30,7 +30,18 @@ export function EditarMateria(id, nome, quantidade) {
   return axios.put(`http://localhost:5010/materia_prima/${id}`, body);
 }
 
-export function EditarProduto (id, nome, quantidade, comprimento, altura, largura, cor, peso, valor, materia_prima) {
+export function EditarProduto(
+  id,
+  nome,
+  quantidade,
+  comprimento,
+  altura,
+  largura,
+  cor,
+  peso,
+  valor,
+  materia_prima
+) {
   let body = {
     nome: nome,
     quantidade: quantidade,
@@ -40,26 +51,17 @@ export function EditarProduto (id, nome, quantidade, comprimento, altura, largur
     cor: cor,
     peso: peso,
     valor: valor,
-    materia_prima: materia_prima
+    materia_prima: materia_prima,
   };
-  
+
   return axios.put(`http://localhost:5010/produto/${id}`, body);
 }
 
-export function EditarPedido(id, data_entrega, cliente, endereco, emissao) {
+export function EditarPedido(id, data_entrega, cliente, endereco) {
   let body = {
     data_entrega: data_entrega,
     cliente: cliente,
     endereco: endereco,
-    emissao: emissao
   };
   return axios.put(`http://localhost:5010/pedido/${id}`, body);
 }
-
-// export function EditarEntrega(id, data_entrega) {
-//   let body = {
-//     data_entrega: data_entrega
-//   };
-
-//   return axios.put(`http://localhost:5010/entrega/${id}`, body);
-// }

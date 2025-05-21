@@ -1,7 +1,5 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="80px" height="80px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier"> <path d="M9 12H15" stroke="#293241" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M12 9L12 15" stroke="#293241" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#293241" stroke-width="2"/> </g>
-</svg>
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.75 22L30.25 22" stroke="#293241" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22 13.75V30.25" stroke="#293241" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M38.5 22C38.5 31.1128 31.1128 38.5 22 38.5C12.8873 38.5 5.5 31.1128 5.5 22C5.5 12.8873 12.8873 5.5 22 5.5C31.1128 5.5 38.5 12.8873 38.5 22Z" stroke="#293241" stroke-width="3"/>
+</svg>
