@@ -159,11 +159,16 @@ export default function PrincipalProduto() {
                     />
                     <select
                       className="input-ped-edit-material"
-                      value={dadosEdicao.materia_prima}
-                      onChange={(e) =>
-                        atualizarCampo("materia_prima", e.target.value)
-                      }
+                      value={dadosEdicao.materia_prima ?? "null"}
+                      onChange={(e) => {
+                        const val = e.target.value;
+                        atualizarCampo(
+                          "materia_prima",
+                          val === "null" ? null : val
+                        );
+                      }}
                     >
+                      <option value="null">Nenhum</option>
                       {materia.map((materia) => (
                         <option key={materia.id} value={materia.id}>
                           {materia.nome}

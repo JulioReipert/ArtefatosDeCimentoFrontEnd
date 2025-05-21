@@ -13,7 +13,7 @@ export default function BtnCriarProduto({ fetchProdutos }) {
   const [cor, setCor] = useState("");
   const [peso, setPeso] = useState("");
   const [valor, setValor] = useState("");
-  const [materiaPrima, setMateriaPrima] = useState("");
+  const [materiaPrima, setMateriaPrima] = useState(null);
 
   const [mostrarCadastro, setMosTrarCadastro] = useState(false);
   const [girado, setGirado] = useState(false);
@@ -51,7 +51,7 @@ export default function BtnCriarProduto({ fetchProdutos }) {
     setCor("");
     setPeso("");
     setValor("");
-    setMateriaPrima("");
+    setMateriaPrima(null);
   }
 
   async function fetchMateriais() {
@@ -139,13 +139,16 @@ export default function BtnCriarProduto({ fetchProdutos }) {
             ) : (
               <select
                 className="select-prod"
-                value={materiaPrima}
-                onChange={(e) => setMateriaPrima(e.target.value)}
+                value={materiaPrima === null ? "null" : materiaPrima}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setMateriaPrima(val === "null" ? null : val);
+                }}
               >
-                <option value="">Selecione</option>
-                {materia.map((materia) => (
-                  <option key={materia.id} value={materia.id}>
-                    {materia.nome}
+                <option value="null">Selecione</option>
+                {materia.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.nome}
                   </option>
                 ))}
               </select>
