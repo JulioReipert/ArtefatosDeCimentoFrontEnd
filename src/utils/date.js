@@ -40,6 +40,21 @@ export function getCurrentDate() {
   );
 }
 
+export function getCurrentDataEntrega() {
+  var nowDate = new Date();
+  var month =
+    (nowDate.getMonth() + 1).toString().length === 1
+      ? "0" + (nowDate.getMonth() + 1)
+      : nowDate.getMonth() + 1;
+
+  var day =
+    nowDate.getDate().toString().length === 1
+      ? "0" + nowDate.getDate()
+      : +nowDate.getDate();
+
+  return nowDate.getFullYear() + "-" + month + "-" + day;
+}
+
 export function formatarDataBR(dataISO) {
   const data = new Date(dataISO);
   return data.toLocaleDateString("pt-BR");

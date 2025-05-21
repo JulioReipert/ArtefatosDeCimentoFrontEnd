@@ -97,7 +97,11 @@ export default function PrincipalPedido() {
                   <>
                     <input
                       className="input-ped-edit-entrega"
-                      value={formatarDataInput(dadosEdicao.data_entrega)}
+                      value={
+                        dadosEdicao.data_entrega
+                          ? formatarDataInput(dadosEdicao.data_entrega)
+                          : ""
+                      }
                       type="date"
                       onChange={(e) =>
                         atualizarCampo("data_entrega", e.target.value)

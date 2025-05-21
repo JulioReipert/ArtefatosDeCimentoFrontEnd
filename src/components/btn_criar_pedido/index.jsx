@@ -3,10 +3,10 @@ import { ReactComponent as CriarImg } from "../../assets/images/criar_img.svg";
 import { useState } from "react";
 import { CriarPedido } from "../../services/criar";
 import { BuscarClientes } from "../../services/buscar";
-import { getCurrentDate } from "../../utils/date";
+import { getCurrentDataEntrega, getCurrentDate } from "../../utils/date";
 
 export default function BtnCriarPedido({ fetchPedidos }) {
-  const [dataEntrega, setDataEntrega] = useState("");
+  const [dataEntrega, setDataEntrega] = useState(getCurrentDataEntrega());
   const [clienteNovo, setClienteNovo] = useState("");
   const [endereco, setEndereco] = useState("");
 
@@ -25,12 +25,13 @@ export default function BtnCriarPedido({ fetchPedidos }) {
     const dataEmissao = getCurrentDate();
     await CriarPedido(dataEntrega, clienteNovo, endereco, dataEmissao);
     limpar();
-   fetchPedidos();
+    fetchPedidos();
+    fetchClientes();
   }
 
   function limpar() {
     setDataEntrega("");
-    setCliente("");
+    setClienteNovo("");
     setEndereco("");
   }
 

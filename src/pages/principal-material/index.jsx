@@ -24,9 +24,14 @@ export default function PrincipalMaterial() {
 
   async function deletarMateria() {
     if (selecionadoId == null) return;
-    await ExcluirMateria(selecionadoId);
-    setSelecionadoId(null);
-    fetchMaterias();
+
+    try {
+      await ExcluirMateria(selecionadoId);
+      setSelecionadoId(null);
+      fetchMaterias();
+    } catch (error) {
+      alert("Erro ao excluir, material está vinculado a um produto");
+    }
   }
 
   async function salvarEdicao() {

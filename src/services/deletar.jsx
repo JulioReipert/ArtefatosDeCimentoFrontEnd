@@ -15,7 +15,3 @@ export function ExcluirProduto(id) {
 export function ExcluirPedido(id) {
   return axios.delete(`http://localhost:5010/pedido/${id}`);
 }
-
-// export function ExcluirEntrega(id) {
-//   return axios.delete(`http://localhost:5010/entrega/${id}`);
-// }
