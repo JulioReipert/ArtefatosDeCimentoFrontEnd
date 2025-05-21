@@ -61,13 +61,13 @@
           align-items: center;
 
           grid-template-columns:
-            5%
+            3.4%
             20%
-            25.5%
-            9.7%
+            23.8%
+            12%
+            9%
             8%
-            8%
-            10%;
+            12%;
           label {
             text-align: center;
           }
@@ -86,12 +86,43 @@
           display: flex;
           flex-direction: row;
           text-align: center;
+
+          .input-cli-edit-nome {
+            max-width: 160px;
+            margin-left: 70px;
+          }
+
+          .input-cli-edit-email {
+            max-width: 160px;
+            margin-left: 60px;
+          }
+          .input-cli-edit-tel {
+            max-width: 100px;
+            margin-left: 48px;
+          }
+          .input-cli-edit-cell {
+            max-width: 100px;
+            margin-left: 5px;
+          }
+
+          .input-cli-edit-numDoc {
+            max-width: 130px;
+            margin-left: 28px;
+          }
+          .erro-input {
+            border: 1.5px solid red;
+          }
+
+          select {
+            border-radius: 6px;
+            margin-left: -2px;
+          }
         }
         .cliente-infos {
           display: grid;
           grid-auto-flow: column;
           align-items: center;
-          grid-template-columns: 2.5% 17% 24% 8% 8% 3.2% auto;
+          grid-template-columns: 2.5% 17% 24% 8% 10% 5% auto;
           gap: 35px;
 
           label {
@@ -137,13 +168,13 @@
             text-align: center;
           }
           .cliente-infos-celular {
-            min-width: 90px;
-            max-width: 90px;
+            min-width: 100px;
+            max-width: 100px;
             text-align: center;
           }
           .cliente-infos-tipo_documento {
             min-width: 37px;
-            max-width: 20px;
+            max-width: 37px;
             text-align: center;
           }
           .cliente-infos-numero_documento {

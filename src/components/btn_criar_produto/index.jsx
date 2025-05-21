@@ -135,7 +135,7 @@ export default function BtnCriarProduto({ fetchProdutos }) {
             />
             <label>Material:</label>
             {materia.length === 0 ? (
-              <p>Nenhuma matéria-prima disponível no momento.</p>
+              <p>N/A matéria-prima.</p>
             ) : (
               <select
                 className="select-prod"
