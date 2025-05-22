@@ -138,6 +138,7 @@ export default function PrincipalCliente() {
                     />
                     <input
                       className="input-cli-edit-email"
+                      type="email"
                       value={dadosEdicao.email}
                       placeholder="email"
                       onChange={(e) => atualizarCampo("email", e.target.value)}

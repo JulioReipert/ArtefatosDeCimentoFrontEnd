@@ -50,12 +50,12 @@
     text-decoration: none;
     color: white;
     a,
-a:visited,
-a:hover,
-a:active {
-  text-decoration: none;
-  color: inherit;
-}
+    a:visited,
+    a:hover,
+    a:active {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 
   .carrossel {
@@ -133,6 +133,13 @@ a:active {
       cursor: pointer;
       text-decoration: none;
       color: inherit;
+    }
+
+    a:hover {
+      border-radius: 10px;
+      background-color: #ffffff;
+      color: #293241;
+      font-weight: 600;
     }
   }
   #inicio {
