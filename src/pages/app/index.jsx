@@ -37,7 +37,7 @@ export default function App() {
       <div id="inicio" className="banner-container">
         <Banner className="banner" />
         <div className="botao-whatsapp">
-          <a href="https://wa.me/5511972416598" target="_blank">
+          <a href="https://wa.me/5511967606347" target="_blank">
             WHATSAPP
           </a>
         </div>
@@ -127,7 +127,7 @@ export default function App() {
 
       <div className="fale-conosco">
         <p className="fale-conosco-titulo">Fale Conosco</p>
-        <p className="telefone">(11) 97241-6598</p>
+        <p className="telefone">(11) 96760-6347</p>
       </div>
       <Bottom />
     </div>
